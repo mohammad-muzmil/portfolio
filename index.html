@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Shaik Mohammad Muzmil | Senior Full Stack Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Senior Full Stack Developer portfolio with over 5 years of experience building scalable web and mobile applications using modern JavaScript frameworks and cloud technologies." />
+
+    <!-- SEO Meta Tags -->
+    <link rel="canonical" href="https://yourwebsite.com/" />
+    <meta name="keywords"
+        content="Shaik Mohammad Muzmil, Full Stack Developer, MERN Stack, MEAN Stack, React Developer, Angular Developer, Node.js Developer, Bengaluru Developer, AWS Developer, Frontend Developer" />
+    <meta name="author" content="Shaik Mohammad Muzmil" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:title" content="Shaik Mohammad Muzmil | Senior Full Stack Developer" />
+    <meta property="og:description"
+        content="Senior Full Stack Developer with over 5 years experience specializing in React, Angular, React Native with Node.js backends and AWS cloud deployments." />
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+    <meta property="og:site_name" content="Shaik Mohammad Muzmil Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://yourwebsite.com/" />
+    <meta name="twitter:title" content="Shaik Mohammad Muzmil | Senior Full Stack Developer" />
+    <meta name="twitter:description"
+        content="Senior Full Stack Developer with over 5 years experience specializing in React, Angular, React Native with Node.js backends and AWS cloud deployments." />
+    <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
+
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+        integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Alpine.js Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine.js for state and interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        :root {
+            --primary-accent: #3b82f6;
+            --secondary-accent: #8b5cf6;
+        }
+
+        /* Midnight Glass base styling */
+        body {
+            background: radial-gradient(circle at top, #141820 0, #050608 55%, #000000 100%);
+            color: #e5e7eb;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.78);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            box-shadow:
+                0 18px 45px rgba(15, 23, 42, 0.85),
+                0 0 0 1px rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(18px) saturate(140%);
+        }
+
+        .glass-soft {
+            background: rgba(15, 23, 42, 0.72);
+            border-radius: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            backdrop-filter: blur(14px) saturate(130%);
+        }
+
+        .tech-badge {
+            border-radius: 9999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            backdrop-filter: blur(10px);
+            background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.35), rgba(15, 23, 42, 0.9));
+        }
+
+        /* Profile image ring and online pulse */
+        .avatar-ring {
+            position: relative;
+            border-radius: 9999px;
+            padding: 4px;
+            background: conic-gradient(from 140deg,
+                    rgba(59, 130, 246, 0.6),
+                    rgba(139, 92, 246, 0.9),
+                    rgba(248, 250, 252, 0.9),
+                    rgba(236, 72, 153, 0.9),
+                    rgba(59, 130, 246, 0.6));
+        }
+
+        .online-dot {
+            position: absolute;
+            right: 10px;
+            bottom: 12px;
+            width: 14px;
+            height: 14px;
+            background: #22c55e;
+            border-radius: 9999px;
+            border: 2px solid #020617;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
+        }
+
+        .online-dot::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: inherit;
+            border: 2px solid rgba(34, 197, 94, 0.6);
+            animation: pulse-ring 1.8s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.75);
+                opacity: 0.8;
+            }
+
+            70% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* Timeline */
+        .timeline-line {
+            background: linear-gradient(to bottom, rgba(148, 163, 184, 0.2), rgba(148, 163, 184, 0.7));
+        }
+
+        /* Skills cloud orbit animation */
+        .float-slow {
+            animation: float-slow 16s ease-in-out infinite alternate;
+        }
+
+        .float-medium {
+            animation: float-slow 18s ease-in-out infinite alternate-reverse;
+        }
+
+        .float-fast {
+            animation: float-slow 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes float-slow {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(6px, -10px, 0);
+            }
+
+            100% {
+                transform: translate3d(-10px, 8px, 0);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+
+        /* Focus outlines for a11y */
+        :focus-visible {
+            outline: 2px solid #e5e7eb;
+            outline-offset: 2px;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shaik Mohammad Muzmil",
+        "jobTitle": "Senior Full Stack Developer",
+        "description": "Senior Full Stack Developer with over 5 years experience specializing in MERN & MEAN stacks",
+        "url": "https://yourwebsite.com",
+        "email": "mohammadmuzmil.shaik@gmail.com",
+        "telephone": "+91-8317513201",
+        "sameAs": [
+            "https://www.linkedin.com/in/shaik-mohammad-muzmil-51b0a3161",
+            "https://github.com/mohammad-muzmil"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "addressCountry": "India"
+        },
+        "knowsAbout": [
+            "React",
+            "Angular",
+            "React Native",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "AWS",
+            "Docker",
+            "MERN Stack",
+            "MEAN Stack",
+            "Full Stack Development"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "MITS",
+            "description": "B.Tech in Computer Science and Engineering"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Shaik Mohammad Muzmil - Portfolio",
+        "alternateName": "Muzmil Portfolio",
+        "url": "https://yourwebsite.com",
+        "description": "Professional portfolio of Shaik Mohammad Muzmil, Senior Full Stack Developer",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://yourwebsite.com/#search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "About",
+                "item": "https://yourwebsite.com/#about"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Experience",
+                "item": "https://yourwebsite.com/#experience"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Projects",
+                "item": "https://yourwebsite.com/#projects"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Skills",
+                "item": "https://yourwebsite.com/#skills"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Why Hire Me",
+                "item": "https://yourwebsite.com/#strengths"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Applications",
+                "item": "https://yourwebsite.com/#applications"
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Contact",
+                "item": "https://yourwebsite.com/#contact"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body x-data="portfolioApp()" class="antialiased">
+
+    <!-- Page background accents -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0">
+        <div class="absolute -left-40 top-0 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl"></div>
+        <div class="absolute -right-40 top-40 h-80 w-80 rounded-full bg-purple-500/10 blur-3xl"></div>
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+    </div>
+
+    <!-- Sticky navigation with glassmorphism -->
+    <header class="sticky top-0 z-40 backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/60" x-data="scrollSpy()"
+        @scroll.window="onScroll">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
+            <a href="#top" class="flex items-center gap-2" aria-label="Go to top of page">
+                <div class="h-8 w-8 rounded-xl bg-slate-900 flex items-center justify-center ring-1 ring-slate-700/80">
+                    <span class="text-xs font-semibold tracking-widest text-slate-100">SM</span>
+                </div>
+                <div class="hidden sm:flex flex-col leading-tight">
+                    <span class="text-xs text-slate-400">Senior Full Stack Developer</span>
+                    <span class="text-sm font-semibold text-slate-100">MERN & MEAN</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-7 text-sm font-medium">
+                <button @click="scrollToId('about')" :class="linkClass('about')" class="hidden md:block">
+                    About
+                </button>
+                <button @click="scrollToId('experience')" :class="linkClass('experience')" class="hidden md:block">
+                    Experience
+                </button>
+                <button @click="scrollToId('projects')" :class="linkClass('projects')" class="hidden md:block">
+                    Projects
+                </button>
+                <button @click="scrollToId('skills')" :class="linkClass('skills')" class="hidden md:block">
+                    Skills
+                </button>
+                <button @click="scrollToId('strengths')" :class="linkClass('strengths')" class="hidden lg:block">
+                    Why Hire Me
+                </button>
+                <button @click="scrollToId('applications')" :class="linkClass('applications')" class="hidden lg:block">
+                    Apps
+                </button>
+                <button @click="scrollToId('contact')" :class="linkClass('contact')" class="hidden md:block">
+                    Contact
+                </button>
+
+                <!-- CTA Button -->
+                <a href="#contact"
+                    class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-semibold px-4 py-2 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    <span class="hidden sm:inline">Get in Touch</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top" class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-20 space-y-16">
+
+        <!-- Hero / Profile -->
+        <section id="about" class="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(260px,2fr)] items-center">
+            <div class="space-y-6">
+                <div
+                    class="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/80 px-3 py-1 text-xs text-slate-300">
+                    <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Available for senior full stack roles
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-50">
+                        Building <span class="gradient-text">enterprise-grade</span> MERN & MEAN stack
+                        solutions.
+                    </h1>
+                    <p class="text-sm sm:text-base text-slate-300 max-w-xl">
+                        Senior Full Stack Developer with over 5 years experience specializing in
+                        <strong class="text-blue-300">React</strong>, <strong class="text-red-300">Angular</strong>,
+                        <strong class="text-cyan-300">React Native</strong> with <strong
+                            class="text-green-300">Node.js</strong> backends
+                        and AWS cloud deployments.
+                    </p>
+                </div>
+
+                <!-- Hero meta / highlights -->
+                <div class="grid gap-4 sm:grid-cols-3">
+                    <div class="glass-soft p-4">
+                        <div class="flex items-center justify-between gap-2 text-xs text-slate-400">
+                            <span>Experience</span>
+                            <i class="fa-solid fa-code-branch text-slate-500"></i>
+                        </div>
+                        <p class="mt-3 text-lg font-semibold text-slate-50">Over 5 years</p>
+                        <p class="mt-1 text-xs text-slate-400">Full stack development across enterprise and
+                            startup environments.</p>
+                    </div>
+                    <div class="glass-soft p-4">
+                        <div class="flex items-center justify-between gap-2 text-xs text-slate-400">
+                            <span>Tech Stacks</span>
+                            <i class="fa-solid fa-layer-group text-slate-500"></i>
+                        </div>
+                        <p class="mt-3 text-lg font-semibold text-slate-50">MERN & MEAN</p>
+                        <p class="mt-1 text-xs text-slate-400">
+                            Expert in both React and Angular ecosystems with Node.js backends.
+                        </p>
+                    </div>
+                    <div class="glass-soft p-4">
+                        <div class="flex items-center justify-between gap-2 text-xs text-slate-400">
+                            <span>Impact</span>
+                            <i class="fa-solid fa-gauge-high text-slate-500"></i>
+                        </div>
+                        <p class="mt-3 text-lg font-semibold text-slate-50">Performance-driven</p>
+                        <p class="mt-1 text-xs text-slate-400">
+                            Improved performance up to 30% and cut costs up to 20% through optimization.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 rounded-full bg-slate-50 text-slate-950 text-sm font-semibold px-4 py-2 shadow-md shadow-slate-900/40 hover:bg-slate-100 focus-visible:outline-none">
+                        <i class="fa-regular fa-paper-plane text-slate-700"></i>
+                        Contact
+                    </a>
+                    <a href="https://www.linkedin.com/in/shaik-mohammad-muzmil-51b0a3161" target="_blank"
+                        rel="noreferrer"
+                        class="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 text-sm px-4 py-2 text-slate-200 hover:border-slate-500">
+                        <i class="fa-brands fa-linkedin text-sky-400"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/mohammad-muzmil" target="_blank" rel="noreferrer"
+                        class="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 text-sm px-4 py-2 text-slate-200 hover:border-slate-500">
+                        <i class="fa-brands fa-github text-slate-200"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile card -->
+            <aside class="glass-panel p-6 sm:p-7 lg:p-8 max-w-md mx-auto">
+                <div class="flex flex-col items-center gap-5">
+                    <div class="avatar-ring h-32 w-32 sm:h-36 sm:w-36">
+                        <img src="https://ui-avatars.com/api/?name=Shaik+Mohammad+Muzmil&background=3b82f6&color=fff&size=256"
+                            alt="Portrait of Shaik Mohammad Muzmil"
+                            class="h-full w-full rounded-full object-cover bg-slate-900" />
+                        <span class="online-dot" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="text-center space-y-1">
+                        <h2 class="text-xl font-semibold text-slate-50">Shaik Mohammad Muzmil</h2>
+                        <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
+                            Senior Full Stack Developer · Bengaluru, India
+                        </p>
+                    </div>
+
+                    <dl class="w-full space-y-2 text-sm">
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-diagram-project text-blue-300/90"></i>
+                                <strong></strong>Frontend</strong>
+                            </dt>
+                            <dd class="text-right text-xs font-medium">React · Angular · React Native</dd>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-server text-green-300/90"></i>
+                                Backend
+                            </dt>
+                            <dd class="text-right text-xs">Node.js · Express</dd>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-cloud text-sky-300/90"></i>
+                                Cloud
+                            </dt>
+                            <dd class="text-right text-xs">AWS · IBM Cloud</dd>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-database text-purple-300/90"></i>
+                                Databases
+                            </dt>
+                            <dd class="text-right text-xs">MongoDB · Redis · SQL · PostgreSQL</dd>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-orange-300/90"></i>
+                                Monitoring
+                            </dt>
+                            <dd class="text-right text-xs">Grafana · Prometheus</dd>
+                        </div>
+                        <div class="flex items-center justify-between text-slate-300">
+                            <dt class="flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-fuchsia-300/90"></i>
+                                Education
+                            </dt>
+                            <dd class="text-right text-xs">
+                                B.Tech, CSE — MITS
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" aria-labelledby="experience-heading" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                    <i class="fa-solid fa-briefcase text-slate-200 text-base"></i>
+                </div>
+                <div>
+                    <h2 id="experience-heading" class="text-xl font-semibold text-slate-50">Experience timeline</h2>
+                    <p class="text-sm text-slate-400">
+                        Progressive ownership across enterprise platforms, greenfield products, and mentoring
+                        initiatives.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative mt-4 pl-5 sm:pl-7">
+                <div class="absolute left-1 sm:left-2 top-0 bottom-0 w-px timeline-line"></div>
+
+                <ol class="space-y-4 sm:space-y-6 text-sm">
+                    <!-- Infobell -->
+                    <li x-data="{ open: true }" class="relative">
+                        <div
+                            class="absolute -left-[7px] sm:-left-1 top-2 h-3 w-3 rounded-full border-2 border-slate-900 bg-blue-400 shadow-[0_0_0_4px_rgba(59,130,246,0.35)]">
+                        </div>
+                        <button @click="open = !open"
+                            class="w-full text-left glass-soft px-4 py-3 sm:px-5 sm:py-4 flex flex-col gap-1.5 hover:border-slate-500/80"
+                            :aria-expanded="open">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Aug 2023 — Present ·
+                                        Bengaluru</p>
+                                    <p class="text-sm sm:text-base font-semibold text-slate-50">Senior Software Engineer
+                                        · Infobell IT Solutions</p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1 rounded-full text-[11px] px-2 py-1 bg-blue-400/10 text-blue-300 border border-blue-400/50">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+                                    Current Role
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-1">
+                                Architecting Angular and React modules, optimizing Node.js APIs, and mentoring
+                                developers to drive measurable performance, cost, and reliability improvements.
+                            </p>
+                        </button>
+                        <div x-show="open" x-collapse class="mt-2 pl-4 pr-1 text-xs text-slate-300 space-y-1.5">
+                            <p>• Engineered Angular and React modules with UX enhancements, improving user engagement by
+                                around 10% and reducing load time by about 20% using code-splitting and lazy loading.
+                            </p>
+                            <p>• Streamlined around 25 Node.js and Express APIs and AWS pipelines, cutting response
+                                times by roughly 30% across multiple deployments.</p>
+                            <p>• Led debugging and mentoring initiatives, boosting responsiveness by about 15% and
+                                helping a 5‑member team adopt best practices in Angular, React, and TypeScript.
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- Knowledge Lens -->
+                    <li x-data="{ open: false }" class="relative">
+                        <div
+                            class="absolute -left-[7px] sm:-left-1 top-2 h-3 w-3 rounded-full border-2 border-slate-900 bg-purple-400/80 shadow-[0_0_0_4px_rgba(139,92,246,0.25)]">
+                        </div>
+                        <button @click="open = !open"
+                            class="w-full text-left glass-soft px-4 py-3 sm:px-5 sm:py-4 flex flex-col gap-1.5 hover:border-slate-500/80"
+                            :aria-expanded="open">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-400">Jan 2021 — Aug 2023 ·
+                                        Bengaluru</p>
+                                    <p class="text-sm sm:text-base font-semibold text-slate-50">Senior Software Engineer
+                                        · Knowledge Lens (Rockwell Automation)</p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1 rounded-full text-[11px] px-2 py-1 bg-emerald-400/10 text-emerald-300 border border-emerald-400/40">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                                    Industrial IoT
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-1">
+                                Built Angular and React applications for DAHS and analytics platforms, integrating
+                                Python backends and improving reliability for tens of thousands of users.
+                            </p>
+                        </button>
+                        <div x-show="open" x-collapse class="mt-2 pl-4 pr-1 text-xs text-slate-300 space-y-1.5">
+                            <p>• Developed web apps using Angular, React, and Python FastAPI, reducing support tickets
+                                by about 20% and improving satisfaction by around 10%.</p>
+                            <p>• Managed Angular and React challenges for approximately 10 projects serving roughly
+                                50,000 users while maintaining about 98% client satisfaction.</p>
+                            <p>• Trained around 8 developers in modern frontend stacks, cutting technical debt by nearly
+                                18% and enhancing delivery speed.</p>
+                        </div>
+                    </li>
+
+                    <!-- Early roles -->
+                    <li x-data="{ open: false }" class="relative">
+                        <div
+                            class="absolute -left-[7px] sm:-left-1 top-2 h-3 w-3 rounded-full border-2 border-slate-900 bg-slate-500/80">
+                        </div>
+                        <button @click="open = !open"
+                            class="w-full text-left glass-soft px-4 py-3 sm:px-5 sm:py-4 flex flex-col gap-1.5 hover:border-slate-500/80"
+                            :aria-expanded="open">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-400">2019 — 2020</p>
+                                    <p class="text-sm sm:text-base font-semibold text-slate-50">Web Developer · Lemon
+                                        Companies, Rize Engineers, GetMeEnabled</p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-1 rounded-full text-[11px] px-2 py-1 bg-slate-500/15 text-slate-200 border border-slate-500/60">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300"></span>
+                                    Foundations
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-300 mt-1">
+                                Delivered commercial applications and marketing sites, building strong fundamentals
+                                in HTML, CSS, JavaScript, PHP, and MongoDB.
+                            </p>
+                        </button>
+                        <div x-show="open" x-collapse class="mt-2 pl-4 pr-1 text-xs text-slate-300 space-y-1.5">
+                            <p>• Implemented production projects with Angular and Node.js, gaining
+                                recognition for real‑world delivery of complete systems.</p>
+                            <p>• Built business websites using HTML, CSS, and JavaScript, deploying via Firebase and
+                                custom domain configuration.</p>
+                            <p>• Upgraded e‑commerce platforms using MVC with PHP and MySQL, earning appreciation for
+                                quality enhancements.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Projects Showcase -->
+        <section id="projects" class="space-y-12">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                    <i class="fa-solid fa-grid-2 text-slate-200 text-base"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-50">Project Portfolio</h2>
+                    <p class="text-sm text-slate-400">
+                        A selection of my professional work across different domains and technologies
+                    </p>
+                </div>
+            </div>
+
+            <!-- Enterprise Projects -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="h-px flex-1 bg-gradient-to-r from-blue-500/20 to-transparent"></div>
+                    <h3 class="text-lg font-medium text-blue-300 flex items-center gap-2">
+                        <i class="fa-solid fa-building-shield"></i>
+                        Enterprise Solutions
+                    </h3>
+                    <div class="h-px flex-1 bg-gradient-to-l from-blue-500/20 to-transparent"></div>
+                </div>
+
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- ConvoGene -->
+                    <article
+                        class="group glass-soft hover:border-blue-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-blue-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-robot text-blue-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-200 border border-blue-500/30">
+                                AI Platform
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">ConvoGene</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            High-performance AI orchestration dashboard with real-time analytics and multi-tenant agent
+                            builder.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-blue-400"></i>
+                                <span>Reduced UI lag by 40% with optimized streaming</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-blue-400"></i>
+                                <span>Real-time token usage and cost analytics</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">React</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Tailwind
+                                CSS</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Python</span>
+                        </div>
+                    </article>
+
+                    <!-- NextZEN ERP -->
+                    <article
+                        class="group glass-soft hover:border-purple-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-purple-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-sitemap text-purple-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-purple-500/20 text-purple-200 border border-purple-500/30">
+                                Enterprise System
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">NextZEN ERP</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            Comprehensive ERP solution with HR, accounting, and warehouse management modules.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-purple-400"></i>
+                                <span>20% faster processing time for business operations</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-purple-400"></i>
+                                <span>30% improvement in operational accuracy</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">React</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">React
+                                Native</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Node.js</span>
+                        </div>
+                    </article>
+
+                    <!-- UnifyTwin -->
+                    <article
+                        class="group glass-soft hover:border-emerald-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-emerald-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-network-wired text-emerald-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-200 border border-emerald-500/30">
+                                IoT Platform
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">UnifyTwin</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            Digital twin platform for industrial IoT with real-time monitoring and analytics.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                                <span>30% improvement in operational efficiency</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-emerald-400"></i>
+                                <span>20% reduction in system downtime</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Angular</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">FastAPI</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">MongoDB</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Client Projects -->
+            <div class="space-y-6 pt-8">
+                <div class="flex items-center gap-3">
+                    <div class="h-px flex-1 bg-gradient-to-r from-purple-500/20 to-transparent"></div>
+                    <h3 class="text-lg font-medium text-purple-300 flex items-center gap-2">
+                        <i class="fa-solid fa-handshake"></i>
+                        Client Projects
+                    </h3>
+                    <div class="h-px flex-1 bg-gradient-to-l from-purple-500/20 to-transparent"></div>
+                </div>
+
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Upturn Stock Advisor -->
+                    <article
+                        class="group glass-soft hover:border-amber-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-amber-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-chart-line text-amber-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-amber-500/20 text-amber-200 border border-amber-500/30">
+                                Financial Platform
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">Upturn Advisor</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            AI-powered stock advisor with real-time market data and robo-portfolio management.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-amber-400"></i>
+                                <span>20% performance improvement in Angular/React Native clients</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-amber-400"></i>
+                                <span>15% increase in user engagement</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Angular</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">RxJS</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">WebSocket</span>
+                        </div>
+                    </article>
+
+                    <!-- SpeechAid -->
+                    <article
+                        class="group glass-soft hover:border-cyan-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-cyan-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-comment-dots text-cyan-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-500/30">
+                                Mobile App
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">SpeechAid</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            Cross-platform speech assistant with low-latency audio processing and offline capabilities.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-cyan-400"></i>
+                                <span>30% smaller app size than native implementations</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-cyan-400"></i>
+                                <span>500ms end-to-end speech processing latency</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">React
+                                Native</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Redux</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">WebRTC</span>
+                        </div>
+                    </article>
+
+                    <!-- TaskForz & CoffeeLove -->
+                    <article
+                        class="group glass-soft hover:border-fuchsia-400/50 transition-all duration-300 p-5 rounded-xl">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="bg-fuchsia-500/10 p-2 rounded-lg">
+                                <i class="fa-solid fa-mug-hot text-fuchsia-300"></i>
+                            </div>
+                            <span
+                                class="text-xs px-2 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-200 border border-fuchsia-500/30">
+                                Web Applications
+                            </span>
+                        </div>
+                        <h4 class="text-lg font-medium text-slate-100 mb-2">TaskForz & CoffeeLove</h4>
+                        <p class="text-sm text-slate-300 mb-4">
+                            Project management and coffee shop portal with geolocation and interactive features.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-fuchsia-400"></i>
+                                <span>Real-time project analytics and reporting</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-400">
+                                <i class="fa-solid fa-check-circle text-fuchsia-400"></i>
+                                <span>Integrated mapping and review system</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700/50 flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Angular</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">Node.js</span>
+                            <span class="text-xs px-2 py-1 bg-slate-800/50 rounded-md text-slate-200">MongoDB</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <!-- Skills Cloud -->
+        <section id="skills" aria-labelledby="skills-heading" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                    <i class="fa-solid fa-stars text-slate-200 text-base"></i>
+                </div>
+                <div>
+                    <h2 id="skills-heading" class="text-xl font-semibold text-slate-50">Technical expertise</h2>
+                    <p class="text-sm text-slate-400">
+                        Comprehensive skill set across frontend, backend, databases, DevOps, and observability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative glass-panel px-4 sm:px-6 py-6 sm:py-8 overflow-hidden"
+                aria-label="Interactive skills map">
+                <!-- Orbit circles -->
+                <div class="absolute inset-0 opacity-50 pointer-events-none">
+                    <div class="absolute inset-6 rounded-full border border-slate-700/40"></div>
+                    <div class="absolute inset-12 rounded-full border border-slate-800/40"></div>
+                    <div class="absolute inset-20 rounded-full border border-slate-900/40"></div>
+                </div>
+
+                <div class="relative grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(240px,2fr)] items-center">
+                    <!-- Floating tags -->
+                    <div class="relative h-72 sm:h-80">
+                        <!-- Core center -->
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="tech-badge px-4 py-2 text-center shadow-lg">
+                                <p class="text-[11px] uppercase tracking-[0.22em] text-slate-300">Full Stack</p>
+                                <p class="text-sm font-semibold mt-1">
+                                    <span class="text-blue-300">React</span> · <span class="text-red-300">Angular</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <button type="button" aria-label="Angular"
+                            class="float-slow absolute left-[12%] top-[14%] px-3 py-1.5 text-xs rounded-full border border-red-400/40 bg-red-500/15 text-red-200 hover:scale-110 transition-transform">
+                            Angular 14–18
+                        </button>
+                        <button type="button" aria-label="React.js"
+                            class="float-medium absolute right-[14%] top-[18%] px-3 py-1.5 text-xs rounded-full border border-cyan-400/40 bg-cyan-500/15 text-cyan-200 hover:scale-110 transition-transform">
+                            React.js
+                        </button>
+                        <button type="button" aria-label="React Native"
+                            class="float-fast absolute left-[20%] bottom-[22%] px-3 py-1.5 text-xs rounded-full border border-cyan-400/40 bg-cyan-500/10 text-cyan-100 hover:scale-110 transition-transform">
+                            React Native
+                        </button>
+                        <button type="button" aria-label="Node.js and Express.js"
+                            class="float-medium absolute right-[18%] bottom-[20%] px-3 py-1.5 text-xs rounded-full border border-emerald-400/40 bg-emerald-500/10 text-emerald-100 hover:scale-110 transition-transform">
+                            Node.js · Express.js
+                        </button>
+                        <button type="button" aria-label="MongoDB and Redis databases"
+                            class="float-slow absolute left-[5%] bottom-[40%] px-3 py-1.5 text-xs rounded-full border border-lime-400/40 bg-lime-500/10 text-lime-100 hover:scale-110 transition-transform">
+                            MongoDB · Redis
+                        </button>
+                        <button type="button" aria-label="SQL and PostgreSQL"
+                            class="float-medium absolute right-[5%] bottom-[52%] px-3 py-1.5 text-xs rounded-full border border-violet-400/40 bg-violet-500/10 text-violet-100 hover:scale-110 transition-transform">
+                            SQL · PostgreSQL
+                        </button>
+                        <button type="button" aria-label="TypeScript"
+                            class="float-fast absolute right-[8%] top-[46%] px-3 py-1.5 text-xs rounded-full border border-sky-400/40 bg-sky-500/10 text-sky-100 hover:scale-110 transition-transform">
+                            TypeScript
+                        </button>
+                        <button type="button" aria-label="AWS and IBM Cloud"
+                            class="float-medium absolute left-[32%] top-[6%] px-3 py-1.5 text-xs rounded-full border border-amber-400/40 bg-amber-500/10 text-amber-100 hover:scale-110 transition-transform">
+                            AWS · IBM Cloud
+                        </button>
+                        <button type="button" aria-label="FastAPI backend"
+                            class="float-slow absolute right-[30%] bottom-[8%] px-3 py-1.5 text-xs rounded-full border border-fuchsia-400/40 bg-fuchsia-500/10 text-fuchsia-100 hover:scale-110 transition-transform">
+                            Python · FastAPI
+                        </button>
+                        <button type="button" aria-label="Prometheus monitoring"
+                            class="float-fast absolute left-[6%] top-[54%] px-3 py-1.5 text-xs rounded-full border border-indigo-400/40 bg-indigo-500/10 text-indigo-100 hover:scale-110 transition-transform">
+                            Prometheus · Loki
+                        </button>
+                        <button type="button" aria-label="Grafana for analytics"
+                            class="float-slow absolute left-[38%] bottom-[32%] px-3 py-1.5 text-xs rounded-full border border-orange-400/40 bg-orange-500/10 text-orange-100 hover:scale-110 transition-transform">
+                            Grafana Analytics
+                        </button>
+                    </div>
+
+                    <!-- Legend / categorized skills -->
+                    <div class="space-y-4 text-xs">
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400"><strong>Frontend
+                                    (Primary)</strong></p>
+                            <p class="mt-1 text-slate-200">
+                                <strong class="text-blue-300">Angular</strong>, <strong
+                                    class="text-cyan-300">React</strong>, <strong class="text-cyan-300">React
+                                    Native</strong>, Redux, RxJS, Material UI, Tailwind CSS, responsive design, state
+                                management, component architecture.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Backend & APIs</p>
+                            <p class="mt-1 text-slate-200">
+                                Node.js, Express.js, REST APIs, microservices architecture, WebSocket‑driven real‑time
+                                APIs for live data streaming.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Databases & Caching</p>
+                            <p class="mt-1 text-slate-200">
+                                <strong>MongoDB</strong> (NoSQL document store), <strong>Redis</strong> (in-memory
+                                caching & pub/sub), <strong>SQL</strong> & <strong>PostgreSQL</strong> (relational
+                                databases), data modeling, query optimization, indexing strategies.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Cloud & DevOps</p>
+                            <p class="mt-1 text-slate-200">
+                                <strong>AWS</strong> (EC2, Lambda, S3), <strong>IBM Cloud</strong>, Firebase.
+                                <strong class="text-blue-300">Docker</strong> containerization, <strong
+                                    class="text-blue-300">GitHub Actions</strong>, CI/CD pipelines (GitLab CI),
+                                NGINX, Apache.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Monitoring & Observability
+                            </p>
+                            <p class="mt-1 text-slate-200">
+                                <strong class="text-orange-300">Grafana</strong> for data visualization, analytics
+                                dashboards, and real-time metrics monitoring. <strong
+                                    class="text-indigo-300">Prometheus</strong> for metrics collection, alerting, and
+                                time-series data analysis. Loki for log aggregation and distributed tracing.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">Leadership</p>
+                            <p class="mt-1 text-slate-200">
+                                Team mentoring, code reviews, technical workshops, and web community initiatives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Hire Me / Key Strengths -->
+        <section id="strengths" aria-labelledby="strengths-heading" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                    <i class="fa-solid fa-rocket text-slate-200 text-base"></i>
+                </div>
+                <div>
+                    <h2 id="strengths-heading" class="text-xl font-semibold text-slate-50">Why work with me</h2>
+                    <p class="text-sm text-slate-400">
+                        What sets me apart for recruiters and project clients.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Full Stack Versatility -->
+                <div class="glass-soft p-5 hover:border-blue-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                            <i class="fa-solid fa-layer-group text-blue-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">Full Stack Versatility</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Fluent in both <strong class="text-blue-300">React</strong> and <strong
+                            class="text-red-300">Angular</strong> ecosystems. I can architect, develop, and deploy
+                        complete applications from database design to responsive UI, eliminating the need for multiple
+                        specialists.
+                    </p>
+                </div>
+
+                <!-- Production-Ready Code -->
+                <div class="glass-soft p-5 hover:border-purple-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                            <i class="fa-solid fa-code-branch text-purple-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">Production-Ready Code</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Delivered <strong>50,000+ user applications</strong> with 98% client satisfaction. My code
+                        emphasizes performance optimization, security best practices, and maintainability for long-term
+                        scalability.
+                    </p>
+                </div>
+
+                <!-- DevOps & Cloud Native -->
+                <div class="glass-soft p-5 hover:border-cyan-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                            <i class="fa-brands fa-docker text-cyan-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">DevOps & Cloud Native</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Expert in <strong class="text-cyan-300">Docker</strong> and <strong
+                            class="text-cyan-300">CI/CD</strong>
+                        pipelines. I build cloud-native applications on AWS and IBM Cloud with automated
+                        deployment workflows.
+                    </p>
+                </div>
+
+                <!-- Data-Driven Insights -->
+                <div class="glass-soft p-5 hover:border-orange-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-orange-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">Data-Driven Insights</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Hands-on with <strong class="text-orange-300">Grafana</strong> and <strong
+                            class="text-indigo-300">Prometheus</strong> for real-time analytics dashboards. I transform
+                        raw metrics into actionable business intelligence.
+                    </p>
+                </div>
+
+                <!-- Fast Learner & Adapter -->
+                <div class="glass-soft p-5 hover:border-green-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                            <i class="fa-solid fa-bolt text-green-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">Fast Learner & Adapter</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Proven track record of quickly mastering new technologies. From Angular 8 to 18, React hooks to
+                        Server Components, I stay current with evolving tech stacks and industry best practices.
+                    </p>
+                </div>
+
+                <!-- Team Leadership -->
+                <div class="glass-soft p-5 hover:border-pink-400/40 transition-colors">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="h-10 w-10 rounded-lg bg-pink-500/10 flex items-center justify-center">
+                            <i class="fa-solid fa-users text-pink-300 text-lg"></i>
+                        </div>
+                        <h3 class="text-base font-semibold text-slate-50">Team Leadership</h3>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Founded MITS Web Club, trained <strong>300+ developers</strong>, and mentored teams to adopt
+                        modern practices. I bring both technical excellence and collaborative leadership.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Applications -->
+        <section id="applications" aria-labelledby="applications-heading" class="space-y-6"
+            x-data="{ appFilter: 'all' }">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                        <i class="fa-solid fa-window-restore text-slate-200 text-base"></i>
+                    </div>
+                    <div>
+                        <h2 id="applications-heading" class="text-xl font-semibold text-slate-50">Featured Applications
+                        </h2>
+                        <p class="text-sm text-slate-400">Production-ready projects with real-world impact</p>
+                    </div>
+                </div>
+
+                <!-- Filter Tags -->
+                <div class="flex flex-wrap gap-2 text-xs">
+                    <button @click="appFilter = 'all'"
+                        :class="appFilter === 'all' ? 'bg-slate-50 text-slate-900' : 'bg-slate-900/70 text-slate-200 border border-slate-700/80'"
+                        class="px-3 py-1.5 rounded-full font-semibold transition-colors">
+                        All Apps
+                    </button>
+                    <button @click="appFilter = 'company'"
+                        :class="appFilter === 'company' ? 'bg-blue-400/90 text-slate-900' : 'bg-slate-900/70 text-slate-200 border border-slate-700/80'"
+                        class="px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 transition-colors">
+                        <span class="h-1.5 w-1.5 rounded-full bg-blue-300"></span>
+                        Company
+                    </button>
+                    <button @click="appFilter = 'client'"
+                        :class="appFilter === 'client' ? 'bg-green-400/90 text-slate-900' : 'bg-slate-900/70 text-slate-200 border border-slate-700/80'"
+                        class="px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 transition-colors">
+                        <span class="h-1.5 w-1.5 rounded-full bg-green-300"></span>
+                        Client
+                    </button>
+                    <button @click="appFilter = 'personal'"
+                        :class="appFilter === 'personal' ? 'bg-purple-500/90 text-slate-50' : 'bg-slate-900/70 text-slate-200 border border-slate-700/80'"
+                        class="px-3 py-1.5 rounded-full font-semibold flex items-center gap-1.5 transition-colors">
+                        <span class="h-1.5 w-1.5 rounded-full bg-purple-300"></span>
+                        Personal
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+                <!-- ConvoGene AI -->
+                <article x-show="appFilter === 'all' || appFilter === 'company'" x-transition
+                    class="glass-panel p-5 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-robot text-4xl text-cyan-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">ConvoGene AI</h3>
+                            <p class="text-xs text-slate-400">AI Orchestration Platform</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/15 text-blue-300 border border-blue-400/40 font-medium">Company</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        High-performance AI dashboard with <strong class="text-cyan-300">sub-200ms
+                            responsiveness</strong>, multi-tenant builder, and real-time analytics.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-400/20 text-[10px] text-cyan-300">React</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-blue-500/10 border border-blue-400/20 text-[10px] text-blue-300">Python</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-purple-500/10 border border-purple-400/20 text-[10px] text-purple-300">LangChain</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-cyan-300 hover:text-cyan-200 font-medium">View Demo →</a>
+                    </div>
+                </article>
+
+                <!-- Upturn Stock Advisor -->
+                <article x-show="appFilter === 'all' || appFilter === 'company'" x-transition
+                    class="glass-panel p-5 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/20 to-indigo-600/20 border border-blue-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-candlestick text-4xl text-blue-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">Upturn Stock Advisor</h3>
+                            <p class="text-xs text-slate-400">AI Trading Platform</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/15 text-blue-300 border border-blue-400/40 font-medium">Company</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Real-time stock signals with <strong class="text-blue-300">Angular 18</strong> web and <strong
+                            class="text-blue-300">React Native</strong> mobile apps.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-red-500/10 border border-red-400/20 text-[10px] text-red-300">Angular
+                            18</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-400/20 text-[10px] text-cyan-300">React
+                            Native</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-green-500/10 border border-green-400/20 text-[10px] text-green-300">WebSocket</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-blue-300 hover:text-blue-200 font-medium">View Demo →</a>
+                    </div>
+                </article>
+
+                <!-- Neticharithra -->
+                <article x-show="appFilter === 'all' || appFilter === 'client'" x-transition
+                    class="glass-panel p-5 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-green-500/20 to-emerald-600/20 border border-green-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-globe text-4xl text-green-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">Neticharithra</h3>
+                            <p class="text-xs text-slate-400">Full-Stack Platform</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-green-400/15 text-green-300 border border-green-400/40 font-medium">Client</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Complete platform with <strong class="text-green-300">2 modules</strong> and dedicated <strong
+                            class="text-green-300">Play Store apps</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-green-500/10 border border-green-400/20 text-[10px] text-green-300">Web
+                            App</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-400/20 text-[10px] text-emerald-300">Mobile
+                            Apps</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-teal-500/10 border border-teal-400/20 text-[10px] text-teal-300">Play
+                            Store</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="https://www.neticharithra.com" target="_blank"
+                            class="text-xs text-green-300 hover:text-green-200 font-medium">Visit Site →</a>
+                    </div>
+                </article>
+
+                <!-- Janatrupti -->
+                <article x-show="appFilter === 'all' || appFilter === 'client'" x-transition
+                    class="glass-panel p-5 hover:border-orange-400/50 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-orange-500/20 to-amber-600/20 border border-orange-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-shopping-cart text-4xl text-orange-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">Janatrupti</h3>
+                            <p class="text-xs text-slate-400">E-commerce Platform</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-green-400/15 text-green-300 border border-green-400/40 font-medium">Client</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Full-featured e-commerce with <strong class="text-orange-300">web & mobile apps</strong>,
+                        payments, and order management.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-orange-500/10 border border-orange-400/20 text-[10px] text-orange-300">Web
+                            App</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-amber-500/10 border border-amber-400/20 text-[10px] text-amber-300">Mobile
+                            App</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-green-500/10 border border-green-400/20 text-[10px] text-green-300">Payments</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-orange-300 hover:text-orange-200 font-medium">View Demo →</a>
+                    </div>
+                </article>
+
+                <!-- NextZEN ERP -->
+                <article x-show="appFilter === 'all' || appFilter === 'company'" x-transition
+                    class="glass-panel p-5 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-purple-500/20 to-pink-600/20 border border-purple-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-building text-4xl text-purple-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">NextZEN ERP</h3>
+                            <p class="text-xs text-slate-400">Enterprise Resource Planning</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/15 text-blue-300 border border-blue-400/40 font-medium">Company</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Full-stack ERP with HR, accounting, and warehouse modules. <strong class="text-purple-300">20%
+                            faster processing</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-purple-500/10 border border-purple-400/20 text-[10px] text-purple-300">React</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-pink-500/10 border border-pink-400/20 text-[10px] text-pink-300">Node.js</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-fuchsia-500/10 border border-fuchsia-400/20 text-[10px] text-fuchsia-300">MongoDB</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-purple-300 hover:text-purple-200 font-medium">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- UnifyTwin IoT -->
+                <article x-show="appFilter === 'all' || appFilter === 'company'" x-transition
+                    class="glass-panel p-5 hover:border-red-400/50 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-red-500/20 to-rose-600/20 border border-red-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-industry text-4xl text-red-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">UnifyTwin IoT</h3>
+                            <p class="text-xs text-slate-400">Digital Twin Platform</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/15 text-blue-300 border border-blue-400/40 font-medium">Company</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Industrial monitoring with real-time feeds and analytics. <strong class="text-red-300">30%
+                            efficiency gain</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-red-500/10 border border-red-400/20 text-[10px] text-red-300">Angular</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-orange-500/10 border border-orange-400/20 text-[10px] text-orange-300">FastAPI</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-400/20 text-[10px] text-yellow-300">MongoDB</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-red-300 hover:text-red-200 font-medium">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- SpeechAid -->
+                <article x-show="appFilter === 'all' || appFilter === 'company'" x-transition
+                    class="glass-panel p-5 hover:border-emerald-400/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all duration-300 flex flex-col">
+                    <div
+                        class="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/20 to-teal-600/20 border border-emerald-400/30 mb-4">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fa-solid fa-microphone text-4xl text-emerald-300/70"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-start justify-between gap-2 mb-2">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-slate-50">SpeechAid</h3>
+                            <p class="text-xs text-slate-400">Mobile Speech Assistant</p>
+                        </div>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/15 text-blue-300 border border-blue-400/40 font-medium">Company</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mb-3 flex-1">
+                        Cross-platform React Native app with <strong class="text-emerald-300">500ms latency</strong>
+                        audio processing.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-400/20 text-[10px] text-emerald-300">React
+                            Native</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-teal-500/10 border border-teal-400/20 text-[10px] text-teal-300">WebRTC</span>
+                        <span
+                            class="px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-400/20 text-[10px] text-cyan-300">Firebase</span>
+                    </div>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+                        <a href="#" class="text-xs text-emerald-300 hover:text-emerald-200 font-medium">Learn More →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact form -->
+        <section id="contact" aria-labelledby="contact-heading" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-700">
+                    <i class="fa-regular fa-envelope text-slate-200 text-base"></i>
+                </div>
+                <div>
+                    <h2 id="contact-heading" class="text-xl font-semibold text-slate-50">Let's collaborate</h2>
+                    <p class="text-sm text-slate-400">
+                        For roles, collaborations, or consulting around full stack development and cloud‑native systems.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-5 sm:p-6 lg:p-7">
+                <form class="grid gap-4 lg:grid-cols-2" aria-label="Contact form">
+                    <div class="space-y-1 lg:col-span-1">
+                        <label for="name" class="block text-xs font-medium text-slate-300">
+                            Name
+                        </label>
+                        <input id="name" name="name" type="text" autocomplete="name"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none"
+                            placeholder="Your name" />
+                    </div>
+                    <div class="space-y-1 lg:col-span-1">
+                        <label for="email" class="block text-xs font-medium text-slate-300">
+                            Email
+                        </label>
+                        <input id="email" name="email" type="email" autocomplete="email"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none"
+                            placeholder="you@company.com" />
+                    </div>
+                    <div class="space-y-1 lg:col-span-2">
+                        <label for="subject" class="block text-xs font-medium text-slate-300">
+                            Subject
+                        </label>
+                        <input id="subject" name="subject" type="text"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none"
+                            placeholder="Project, role, or collaboration idea" />
+                    </div>
+                    <div class="space-y-1 lg:col-span-2">
+                        <label for="message" class="block text-xs font-medium text-slate-300">
+                            Message
+                        </label>
+                        <textarea id="message" name="message" rows="4"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-slate-400 focus:outline-none resize-none"
+                            placeholder="Share a bit about what you are building and how collaboration would help."></textarea>
+                    </div>
+
+                    <div class="lg:col-span-2 flex flex-wrap items-center gap-3 justify-between">
+                        <div class="text-xs text-slate-500">
+                            Or reach out directly at
+                            <a href="mailto:mohammadmuzmil.shaik@gmail.com"
+                                class="text-slate-200 underline decoration-slate-500">
+                                mohammadmuzmil.shaik@gmail.com
+                            </a>
+                            or
+                            <a href="tel:+918317513201" class="text-slate-200 underline decoration-slate-500">
+                                +91‑8317513201
+                            </a>.
+                        </div>
+                        <button type="submit"
+                            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold px-4 py-2 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow">
+                            <i class="fa-regular fa-paper-plane-top fa-rotate-by"
+                                style="--fa-rotate-angle: -20deg;"></i>
+                            Send message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800/70 bg-slate-950/90 text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-2">
+            <p>
+                © <span x-text="new Date().getFullYear()"></span> Shaik Mohammad Muzmil. Built with modern web
+                technologies.
+            </p>
+            <p class="flex items-center gap-2">
+                <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Open to senior full stack roles.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function portfolioApp() {
+            return {
+                projectFilter: 'all',
+                showProject(categories) {
+                    if (this.projectFilter === 'all') return true;
+                    return categories.includes(this.projectFilter);
+                }
+            };
+        }
+
+        function scrollSpy() {
+            return {
+                activeId: 'about',
+                sectionIds: ['about', 'experience', 'projects', 'skills', 'strengths', 'applications', 'contact'],
+                onScroll() {
+                    const offsets = this.sectionIds.map(id => {
+                        const el = document.getElementById(id);
+                        if (!el) return { id, top: Infinity };
+                        const rect = el.getBoundingClientRect();
+                        return { id, top: Math.abs(rect.top - 80) };
+                    });
+                    offsets.sort((a, b) => a.top - b.top);
+                    if (offsets[0]) this.activeId = offsets[0].id;
+                },
+                scrollToId(id) {
+                    const el = document.getElementById(id);
+                    if (!el) return;
+                    const top = window.scrollY + el.getBoundingClientRect().top - 72;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                },
+                linkClass(id) {
+                    return this.activeId === id
+                        ? 'text-slate-50'
+                        : 'text-slate-400 hover:text-slate-200';
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
