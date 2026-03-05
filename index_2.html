@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Muzmil — Senior Full Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Shaik Mohammad Muzmil — Senior Full Stack Developer. 5+ years. MERN/MEAN/AWS. Bengaluru."/>
+  <meta name="author" content="Shaik Mohammad Muzmil"/>
+  <meta name="theme-color" content="#0a0a0a"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --acc:   #c8ff00;
+      --white: #ffffff;
+      --bd:    rgba(255,255,255,0.09);
+      --sb:    #080808;
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      background:#000;
+      color:var(--white);
+      font-family:'Manrope',sans-serif;
+      overflow-x:hidden;
+      cursor:none;
+    }
+    /* subtle scanlines */
+    body::before {
+      content:'';position:fixed;inset:0;
+      background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.007) 3px,rgba(255,255,255,0.007) 4px);
+      pointer-events:none;z-index:9000;
+    }
+
+    /* ── CURSOR ─── */
+    #cr{position:fixed;top:0;left:0;width:32px;height:32px;border:1.5px solid var(--acc);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .16s,height .16s,background .16s;mix-blend-mode:difference;}
+    #cd{position:fixed;top:0;left:0;width:4px;height:4px;background:var(--acc);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+
+    /* ── FONTS ─── */
+    .fd{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;}
+    .fs{font-family:'Instrument Serif',serif;}
+    .fm{font-family:'IBM Plex Mono',monospace;}
+
+    /* ── SIDEBAR ─── */
+    #sb {
+      position:fixed;top:0;left:0;width:236px;height:100vh;
+      display:flex;flex-direction:column;z-index:100;
+      background:var(--sb);
+      border-right:1px solid rgba(255,255,255,0.1);
+    }
+    #mc{margin-left:236px;}
+    @media(max-width:1023px){#sb{display:none;}#mc{margin-left:0;}#mn{display:flex!important;}}
+
+    /* sidebar top profile strip */
+    .sb-profile{
+      padding:1.8rem 1.6rem 1.4rem;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .sb-av{
+      width:44px;height:44px;border-radius:50%;
+      border:1.5px solid rgba(200,255,0,0.45);
+      overflow:hidden;flex-shrink:0;
+    }
+    .sb-av img{width:100%;height:100%;object-fit:cover;display:block;}
+    .avail-badge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(200,255,0,0.06);
+      border:1px solid rgba(200,255,0,0.18);
+      border-radius:999px;padding:3px 9px;
+      margin-top:10px;
+    }
+    .avail-dot{width:6px;height:6px;background:var(--acc);border-radius:50%;animation:blink 1.8s ease-in-out infinite;flex-shrink:0;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.15;}}
+
+    /* nav links */
+    .nl{
+      display:flex;align-items:center;gap:12px;
+      padding:10px 1.6rem;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;
+      color:#666;
+      text-decoration:none;
+      transition:color .2s,background .2s,padding-left .2s;
+      position:relative;
+    }
+    .nl::before{
+      content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+      width:0;height:2px;background:var(--acc);transition:width .25s;
+    }
+    .nl:hover{color:#ccc;padding-left:2rem;background:rgba(255,255,255,0.03);}
+    .nl:hover::before{width:18px;}
+    .nl.on{color:var(--acc);padding-left:2rem;background:rgba(200,255,0,0.035);}
+    .nl.on::before{width:18px;}
+    .nl .nn{
+      font-family:'IBM Plex Mono',monospace;font-size:.55rem;
+      color:rgba(200,255,0,0.4);min-width:18px;
+      transition:color .2s;
+    }
+    .nl.on .nn{color:var(--acc);}
+    .nl:hover .nn{color:rgba(255,255,255,0.4);}
+
+    /* sidebar footer */
+    .sb-foot{
+      padding:1.2rem 1.6rem;
+      border-top:1px solid rgba(255,255,255,0.07);
+    }
+
+    /* ── SECTION ─── */
+    section{min-height:100vh;border-bottom:1px solid var(--bd);padding:5rem 4rem 5rem 5rem;position:relative;overflow:hidden;}
+    @media(max-width:768px){section{padding:4rem 1.5rem 5rem;}}
+    .bg-sec-num{font-family:'Bebas Neue',sans-serif;font-size:8rem;line-height:1;color:rgba(255,255,255,.025);position:absolute;top:1.5rem;right:2rem;pointer-events:none;user-select:none;}
+
+    /* ── LABELS ─── */
+    .lbl{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#555;}
+    .lbl-a{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);}
+    .acl{display:inline-block;width:34px;height:1.5px;background:var(--acc);vertical-align:middle;margin-right:10px;}
+
+    /* ── HERO ─── */
+    .hh1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.2rem,9.5vw,9rem);line-height:.92;letter-spacing:.01em;}
+    .hh1 .ow{color:transparent;-webkit-text-stroke:1.5px var(--acc);}
+    .hh1 .iw{font-family:'Instrument Serif',serif;font-style:italic;font-size:.87em;color:#e5dfc8;-webkit-text-stroke:0;}
+
+    /* avatar in hero */
+    .hav{position:relative;display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0;}
+    .hav-img{
+      width:200px;height:200px;border-radius:50%;overflow:hidden;
+      border:2px solid rgba(200,255,0,0.35);
+      box-shadow:0 0 0 8px rgba(200,255,0,0.04), 0 0 40px rgba(200,255,0,0.08);
+    }
+    .hav-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(20%) contrast(1.08);}
+    .hav-orbit{
+      position:absolute;inset:-14px;border:1px dashed rgba(200,255,0,0.12);
+      border-radius:50%;pointer-events:none;
+      animation:spin 16s linear infinite;
+    }
+    .hav-orbit::before{
+      content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);
+      width:8px;height:8px;background:var(--acc);border-radius:50%;
+      box-shadow:0 0 8px var(--acc);
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .hav-name{
+      margin-top:14px;
+      font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;
+      text-transform:uppercase;color:#555;text-align:center;line-height:1.7;
+    }
+    .hav-name strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.08em;color:#bbb;font-weight:400;}
+    .hav-online{
+      display:inline-flex;align-items:center;gap:5px;margin-top:6px;
+      background:rgba(200,255,0,0.05);border:1px solid rgba(200,255,0,0.2);
+      border-radius:999px;padding:3px 10px;
+      font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.1em;color:var(--acc);
+    }
+
+    /* ── MARQUEE ─── */
+    .mt{display:flex;width:max-content;animation:mq 26s linear infinite;}
+    @keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    .mi{font-family:'Bebas Neue',sans-serif;font-size:.88rem;letter-spacing:.14em;padding:0 1.8rem;color:#2e2e2e;border-right:1px solid var(--bd);white-space:nowrap;}
+    .mi.lit{color:var(--acc);}
+
+    /* ── PILL ─── */
+    .pill{font-family:'IBM Plex Mono',monospace;font-size:.59rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 11px;color:#666;transition:border-color .2s,color .2s,background .2s;cursor:default;}
+    .pill:hover,.pill.on{border-color:var(--acc);color:var(--acc);background:rgba(200,255,0,.05);}
+    button.pill{cursor:none;}
+
+    /* ── STATS ─── */
+    .stat{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.1rem;}
+    .stat-n{font-family:'Bebas Neue',sans-serif;font-size:3rem;line-height:1;color:var(--white);}
+    .stat-n em{color:var(--acc);font-style:normal;}
+
+    /* ── TIMELINE ─── */
+    .tl-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--acc),rgba(200,255,0,.06));}
+    .tl-dot{width:10px;height:10px;border:2px solid var(--acc);border-radius:50%;background:#000;flex-shrink:0;transition:background .3s,box-shadow .3s;}
+    .tl-dot.filled{background:var(--acc);box-shadow:0 0 10px rgba(200,255,0,.5);}
+
+    /* ── PROJECT ROW ─── */
+    .prow{border:1px solid var(--bd);background:#000;transition:border-color .28s,transform .28s;position:relative;overflow:hidden;}
+    .prow::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,.03),transparent 50%);opacity:0;transition:opacity .28s;}
+    .prow:hover{border-color:rgba(200,255,0,.28);transform:translateX(3px);}
+    .prow:hover::before{opacity:1;}
+    .prow-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;color:rgba(255,255,255,.03);position:absolute;top:.3rem;right:.8rem;pointer-events:none;}
+
+    /* ── SKILL ROW ─── */
+    .skr{display:flex;align-items:center;gap:1rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
+    .skn{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.05em;color:#999;width:150px;flex-shrink:0;}
+    .skt{flex:1;height:1px;background:rgba(255,255,255,.05);position:relative;}
+    .skf{position:absolute;top:0;left:0;bottom:0;background:var(--acc);width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1);}
+    .skp{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#3a3a3a;width:30px;text-align:right;flex-shrink:0;}
+
+    /* ── STRENGTH CARD ─── */
+    .strc{border:1px solid var(--bd);padding:1.7rem;position:relative;overflow:hidden;transition:border-color .28s,background .28s;}
+    .strc:hover{border-color:rgba(200,255,0,.22);background:rgba(200,255,0,.015);}
+    .strc::after{content:'';position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 22px 22px 0;border-color:transparent rgba(200,255,0,.12) transparent transparent;transition:border-width .28s;}
+    .strc:hover::after{border-width:0 34px 34px 0;}
+    .strc-ic{font-size:1.2rem;color:var(--acc);margin-bottom:.75rem;}
+    .strc h3{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.05em;color:var(--white);margin-bottom:.35rem;}
+    .strc p{font-size:.74rem;color:#555;line-height:1.75;}
+
+    /* ── FORM ─── */
+    .fld{border:none;border-bottom:1px solid rgba(255,255,255,.1);background:transparent;color:var(--white);font-family:'Manrope',sans-serif;font-size:.88rem;padding:.7rem 0;width:100%;outline:none;transition:border-color .2s;}
+    .fld::placeholder{color:#2a2a2a;}
+    .fld:focus{border-color:var(--acc);}
+
+    /* ── BUTTONS ─── */
+    .btn-p{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.14em;background:var(--acc);color:#000;border:none;padding:12px 34px;cursor:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:9px;}
+    .btn-p:hover{background:#fff;transform:translateY(-2px);}
+    .btn-o{font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#ccc;border:1px solid rgba(255,255,255,.15);padding:10px 20px;cursor:none;transition:border-color .2s,color .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+    .btn-o:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px);}
+
+    /* ── MOBILE NAV ─── */
+    #mn{display:none;position:fixed;bottom:0;left:0;right:0;border-top:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.96);backdrop-filter:blur(20px);z-index:100;justify-content:space-around;padding:9px 0 13px;}
+    .mla{display:flex;flex-direction:column;align-items:center;gap:3px;font-family:'IBM Plex Mono',monospace;font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:#444;text-decoration:none;padding:4px 8px;transition:color .2s;}
+    .mla.on,.mla:hover{color:var(--acc);}
+
+    /* ── REVEAL ─── */
+    .sr{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);}
+    .sr.vis{opacity:1;transform:none;}
+
+    .acc{color:var(--acc);}
+  </style>
+</head>
+
+<body x-data="app()">
+  <div id="cr"></div>
+  <div id="cd"></div>
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside id="sb">
+
+    <!-- Profile block at top -->
+    <div class="sb-profile">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <div class="sb-av">
+          <img src="https://ui-avatars.com/api/?name=Shaik+Mohammad+Muzmil&background=161616&color=c8ff00&size=88&bold=true&font-size=0.38"
+               alt="Muzmil"/>
+        </div>
+        <div>
+          <div class="fd" style="font-size:1.1rem;line-height:1;letter-spacing:.06em;color:#fff;">MUZMIL<span style="color:var(--acc)">.</span></div>
+          <div class="lbl" style="font-size:.52rem;margin-top:3px;color:#555;">Senior Full Stack Dev</div>
+        </div>
+      </div>
+      <div class="avail-badge">
+        <span class="avail-dot"></span>
+        <span class="fm" style="font-size:.54rem;letter-spacing:.1em;color:var(--acc);">AVAILABLE NOW</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav style="flex:1;padding:.6rem 0;" x-data="sSpy()">
+      <a href="#hero"       @click.prevent="go('hero')"       :class="a==='hero'       ?'on':''" class="nl"><span class="nn">01</span>About</a>
+      <a href="#skills"     @click.prevent="go('skills')"     :class="a==='skills'     ?'on':''" class="nl"><span class="nn">02</span>Skills</a>
+      <a href="#experience" @click.prevent="go('experience')" :class="a==='experience' ?'on':''" class="nl"><span class="nn">03</span>Experience</a>
+      <a href="#projects"   @click.prevent="go('projects')"   :class="a==='projects'   ?'on':''" class="nl"><span class="nn">04</span>Projects</a>
+      <a href="#strengths"  @click.prevent="go('strengths')"  :class="a==='strengths'  ?'on':''" class="nl"><span class="nn">05</span>Why Me</a>
+      <a href="#contact"    @click.prevent="go('contact')"    :class="a==='contact'    ?'on':''" class="nl"><span class="nn">06</span>Contact</a>
+    </nav>
+
+    <!-- Footer block -->
+    <div class="sb-foot">
+      <div style="display:flex;gap:.4rem;margin-bottom:.9rem;">
+        <a href="https://www.linkedin.com/in/shaik-mohammad-muzmil-51b0a3161" target="_blank"
+           class="btn-o" style="padding:8px 0;font-size:.7rem;flex:1;justify-content:center;border-color:rgba(255,255,255,.1);">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/mohammad-muzmil" target="_blank"
+           class="btn-o" style="padding:8px 0;font-size:.7rem;flex:1;justify-content:center;border-color:rgba(255,255,255,.1);">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:mohammadmuzmil.shaik@gmail.com"
+           class="btn-o" style="padding:8px 0;font-size:.7rem;flex:1;justify-content:center;border-color:rgba(255,255,255,.1);">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <i class="fa-solid fa-location-dot" style="color:#3a3a3a;font-size:.6rem;"></i>
+        <span class="lbl" style="font-size:.54rem;color:#3a3a3a;">Bengaluru · Dubai · Remote</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ MOBILE NAV ═══════════════ -->
+  <nav id="mn">
+    <a href="#hero"       class="mla"><i class="fa-solid fa-house text-sm"></i>About</a>
+    <a href="#skills"     class="mla"><i class="fa-solid fa-code text-sm"></i>Skills</a>
+    <a href="#experience" class="mla"><i class="fa-solid fa-briefcase text-sm"></i>Work</a>
+    <a href="#projects"   class="mla"><i class="fa-solid fa-grid-2 text-sm"></i>Projects</a>
+    <a href="#contact"    class="mla"><i class="fa-regular fa-envelope text-sm"></i>Contact</a>
+  </nav>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main id="mc">
+
+    <!-- ──── 01 · HERO ──── -->
+    <section id="hero" style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-bottom:0;">
+      <div class="bg-sec-num">01</div>
+
+      <!-- Ticker strip -->
+      <div style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:8px 0;overflow:hidden;margin-bottom:3.5rem;">
+        <div class="mt">
+          <span class="mi lit">Available for Work</span><span class="mi">Senior Full Stack Developer</span>
+          <span class="mi lit">5+ Years</span><span class="mi">MERN Stack</span>
+          <span class="mi lit">MEAN Stack</span><span class="mi">AWS Cloud</span>
+          <span class="mi lit">React · Angular · Node.js</span><span class="mi">Bengaluru → Dubai → Remote</span>
+          <span class="mi lit">Available for Work</span><span class="mi">Senior Full Stack Developer</span>
+          <span class="mi lit">5+ Years</span><span class="mi">MERN Stack</span>
+          <span class="mi lit">MEAN Stack</span><span class="mi">AWS Cloud</span>
+          <span class="mi lit">React · Angular · Node.js</span><span class="mi">Bengaluru → Dubai → Remote</span>
+        </div>
+      </div>
+
+      <!-- Hero body: text left, personal card right -->
+      <div style="display:grid;grid-template-columns:1fr 220px;gap:4rem;align-items:center;" class="sr">
+
+        <!-- Left: headline + intro -->
+        <div>
+          <div class="lbl-a" style="margin-bottom:1.2rem;"><span class="acl"></span>Senior Full Stack Developer</div>
+          <h1 class="hh1">
+            <span class="iw">Building</span><br>
+            ENTER<span class="ow">PRISE</span><br>
+            GRADE<br>
+            <span style="color:#1e1e1e;">SOLUTIONS</span>
+          </h1>
+
+          <p style="color:#555;font-size:.83rem;line-height:1.85;max-width:440px;margin-top:2rem;">
+            Hi, I'm <span style="color:#bbb;font-weight:600;">Shaik Mohammad Muzmil</span> — a Senior Full Stack Developer
+            with <span style="color:var(--acc)">5+ years</span> building enterprise platforms using
+            <span style="color:#999">React</span>, <span style="color:#999">Angular</span>,
+            <span style="color:#999">Node.js</span> and <span style="color:#999">AWS</span>.
+            I turn complex problems into fast, scalable products.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem;">
+            <a href="#contact" class="btn-p">Hire Me <i class="fa-solid fa-arrow-right text-xs"></i></a>
+            <a href="https://www.linkedin.com/in/shaik-mohammad-muzmil-51b0a3161" target="_blank" class="btn-o">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/mohammad-muzmil" target="_blank" class="btn-o">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <!-- Quick-fact chips -->
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.6rem;">
+            <span class="pill on">React / Next.js</span>
+            <span class="pill on">Angular 14–18</span>
+            <span class="pill">React Native</span>
+            <span class="pill on">Node.js</span>
+            <span class="pill">AWS</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Docker</span>
+          </div>
+        </div>
+
+        <!-- Right: personal profile card -->
+        <div class="hav">
+          <div class="hav-img">
+            <img src="https://ui-avatars.com/api/?name=Shaik+Mohammad+Muzmil&background=0f0f0f&color=c8ff00&size=400&bold=true&font-size=0.28"
+                 alt="Shaik Mohammad Muzmil" width="200" height="200"/>
+            <div class="hav-orbit"></div>
+          </div>
+          <div class="hav-name">
+            <strong>Shaik Mohammad Muzmil</strong>
+            Bengaluru, India
+          </div>
+          <div class="hav-online">
+            <span style="width:5px;height:5px;background:var(--acc);border-radius:50%;animation:blink 1.8s infinite;"></span>
+            Open to Work
+          </div>
+
+          <!-- Personal quick-facts below avatar -->
+          <div style="margin-top:1.4rem;width:100%;display:flex;flex-direction:column;gap:.5rem;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.06);border-radius:6px;">
+              <span class="fm" style="font-size:.58rem;color:#555;letter-spacing:.06em;">EXP</span>
+              <span class="fd acc" style="font-size:.95rem;">5+ YRS</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.06);border-radius:6px;">
+              <span class="fm" style="font-size:.58rem;color:#555;letter-spacing:.06em;">STACK</span>
+              <span class="fm" style="font-size:.6rem;color:#888;">MERN / MEAN</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:.45rem .7rem;border:1px solid rgba(255,255,255,.06);border-radius:6px;">
+              <span class="fm" style="font-size:.58rem;color:#555;letter-spacing:.06em;">CLOUD</span>
+              <span class="fm" style="font-size:.6rem;color:#888;">AWS · IBM</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:.45rem .7rem;border:1px solid rgba(200,255,0,.1);border-radius:6px;background:rgba(200,255,0,.03);">
+              <span class="fm" style="font-size:.58rem;color:#555;letter-spacing:.06em;">EDU</span>
+              <span class="fm" style="font-size:.6rem;color:#888;">B.Tech CSE · MITS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.07);" class="sr">
+        <div class="stat"><div class="stat-n">5<em>+</em></div><div class="lbl" style="margin-top:4px;">Years Experience</div></div>
+        <div class="stat"><div class="stat-n">40<em>%</em></div><div class="lbl" style="margin-top:4px;">Avg Perf. Gain</div></div>
+        <div class="stat"><div class="stat-n">300<em>+</em></div><div class="lbl" style="margin-top:4px;">Devs Mentored</div></div>
+      </div>
+    </section>
+
+    <!-- ──── 02 · SKILLS ──── -->
+    <section id="skills" x-data="skApp()">
+      <div class="bg-sec-num">02</div>
+      <div class="sr">
+        <div class="lbl-a" style="margin-bottom:.5rem;"><span class="acl"></span>Technical Arsenal</div>
+        <h2 class="fd" style="font-size:clamp(2.6rem,5vw,4.8rem);line-height:1;margin-bottom:2.5rem;">
+          MERN / MEAN / <span style="color:#1e1e1e;">AWS</span>
+        </h2>
+      </div>
+
+      <div x-ref="sw" style="max-width:580px;" class="sr">
+        <template x-for="s in sk" :key="s.n">
+          <div class="skr">
+            <div class="skn" x-text="s.n"></div>
+            <div class="skt"><div class="skf" :style="ld ? `width:${s.p}%` : 'width:0'"></div></div>
+            <div class="skp" x-text="s.p + '%'"></div>
+          </div>
+        </template>
+      </div>
+
+      <div style="margin-top:3rem;display:flex;flex-wrap:wrap;gap:.5rem;" class="sr">
+        <span class="pill on">React</span><span class="pill on">Angular 14–18</span>
+        <span class="pill">React Native</span><span class="pill on">Node.js</span>
+        <span class="pill">Express.js</span><span class="pill on">TypeScript</span>
+        <span class="pill">MongoDB</span><span class="pill">Redis</span>
+        <span class="pill on">AWS EC2/Lambda/S3</span><span class="pill">PostgreSQL</span>
+        <span class="pill">Docker</span><span class="pill on">Python / FastAPI</span>
+        <span class="pill">Grafana</span><span class="pill">Prometheus</span>
+        <span class="pill">RxJS</span><span class="pill">Redux</span>
+        <span class="pill on">CI/CD</span><span class="pill">IBM Cloud</span>
+        <span class="pill">WebRTC</span><span class="pill">WebSocket</span>
+      </div>
+    </section>
+
+    <!-- ──── 03 · EXPERIENCE ──── -->
+    <section id="experience">
+      <div class="bg-sec-num">03</div>
+      <div class="sr">
+        <div class="lbl-a" style="margin-bottom:.5rem;"><span class="acl"></span>Career History</div>
+        <h2 class="fd" style="font-size:clamp(2.6rem,5vw,4.8rem);line-height:1;margin-bottom:2.5rem;">
+          5 YEARS OF <span style="-webkit-text-stroke:1px var(--acc);color:transparent;">IMPACT</span>
+        </h2>
+      </div>
+
+      <div style="position:relative;padding-left:2.5rem;" class="sr">
+        <div class="tl-line"></div>
+
+        <!-- Infobell -->
+        <div x-data="{o:true}" style="margin-bottom:1.8rem;">
+          <div style="display:flex;align-items:flex-start;gap:1.4rem;">
+            <div class="tl-dot filled" style="margin-top:.4rem;margin-left:-2.8rem;flex-shrink:0;"></div>
+            <div class="prow" style="flex:1;padding:1.5rem;cursor:pointer;" @click="o=!o">
+              <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:.8rem;margin-bottom:.5rem;">
+                <div>
+                  <div class="lbl" style="margin-bottom:3px;">AUG 2023 — PRESENT · BENGALURU</div>
+                  <div class="fd acc" style="font-size:1.3rem;">INFOBELL IT SOLUTIONS</div>
+                  <div class="fm" style="font-size:.63rem;color:#777;margin-top:2px;">Senior Software Engineer</div>
+                </div>
+                <span class="fm" style="font-size:.56rem;letter-spacing:.1em;border:1px solid rgba(200,255,0,.3);color:var(--acc);padding:3px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;">
+                  <span style="width:4px;height:4px;background:var(--acc);border-radius:50%;animation:blink 1.8s infinite;"></span>CURRENT
+                </span>
+              </div>
+              <p style="font-size:.75rem;color:#555;line-height:1.75;">Architecting Angular/React modules, optimizing Node.js APIs, mentoring developers to drive measurable performance and reliability improvements.</p>
+              <div x-show="o" x-collapse style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05);">
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:.45rem;">
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span class="acc" style="flex-shrink:0;">→</span>Improved user engagement ~10%, reduced load times ~20% via lazy loading and code-splitting.</li>
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span class="acc" style="flex-shrink:0;">→</span>Streamlined 25+ Node.js/Express APIs and AWS pipelines, cutting response times ~30%.</li>
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span class="acc" style="flex-shrink:0;">→</span>Mentored 5-member team in Angular, React, TypeScript best practices.</li>
+                </ul>
+              </div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Angular</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">React</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Node.js</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">AWS</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">TypeScript</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Knowledge Lens -->
+        <div x-data="{o:false}" style="margin-bottom:1.8rem;">
+          <div style="display:flex;align-items:flex-start;gap:1.4rem;">
+            <div class="tl-dot" style="margin-top:.4rem;margin-left:-2.8rem;flex-shrink:0;"></div>
+            <div class="prow" style="flex:1;padding:1.5rem;cursor:pointer;" @click="o=!o">
+              <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:.8rem;margin-bottom:.5rem;">
+                <div>
+                  <div class="lbl" style="margin-bottom:3px;">JAN 2021 — AUG 2023 · BENGALURU</div>
+                  <div class="fd" style="font-size:1.3rem;color:#bfa8ff;">KNOWLEDGE LENS</div>
+                  <div class="fm" style="font-size:.62rem;color:#555;margin-top:2px;">Rockwell Automation · Senior Software Engineer</div>
+                </div>
+                <span class="fm" style="font-size:.56rem;letter-spacing:.1em;border:1px solid rgba(74,222,128,.25);color:#4ade80;padding:3px 9px;border-radius:999px;">Industrial IoT</span>
+              </div>
+              <p style="font-size:.75rem;color:#555;line-height:1.75;">Built Angular/React DAHS and analytics platforms with Python backends, serving 50,000+ users at ~98% satisfaction.</p>
+              <div x-show="o" x-collapse style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05);">
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:.45rem;">
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span style="color:#bfa8ff;flex-shrink:0;">→</span>Developed apps with Angular, React, Python FastAPI, reducing support tickets ~20%.</li>
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span style="color:#bfa8ff;flex-shrink:0;">→</span>Managed ~10 projects for ~50,000 users maintaining ~98% client satisfaction.</li>
+                  <li style="font-size:.72rem;color:#666;display:flex;gap:.6rem;"><span style="color:#bfa8ff;flex-shrink:0;">→</span>Trained ~8 developers, cutting technical debt ~18%.</li>
+                </ul>
+              </div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Angular</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">React</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Python</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">FastAPI</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">IBM Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Early Roles -->
+        <div x-data="{o:false}">
+          <div style="display:flex;align-items:flex-start;gap:1.4rem;">
+            <div class="tl-dot" style="margin-top:.4rem;margin-left:-2.8rem;flex-shrink:0;"></div>
+            <div class="prow" style="flex:1;padding:1.5rem;cursor:pointer;" @click="o=!o">
+              <div style="margin-bottom:.5rem;">
+                <div class="lbl" style="margin-bottom:3px;">2019 — 2020</div>
+                <div class="fd" style="font-size:1.3rem;color:#444;">EARLY FOUNDATIONS</div>
+                <div class="fm" style="font-size:.62rem;color:#333;margin-top:2px;">Lemon Companies · Rize Engineers · GetMeEnabled</div>
+              </div>
+              <p style="font-size:.75rem;color:#444;line-height:1.75;">Commercial apps and marketing sites — HTML, CSS, JavaScript, PHP, MongoDB fundamentals built here.</p>
+              <div x-show="o" x-collapse style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.05);">
+                <ul style="list-style:none;display:flex;flex-direction:column;gap:.45rem;">
+                  <li style="font-size:.72rem;color:#555;display:flex;gap:.6rem;"><span style="color:#444;flex-shrink:0;">→</span>Implemented production Angular/Node.js projects from scratch.</li>
+                  <li style="font-size:.72rem;color:#555;display:flex;gap:.6rem;"><span style="color:#444;flex-shrink:0;">→</span>Built business sites deployed via Firebase with custom domains.</li>
+                  <li style="font-size:.72rem;color:#555;display:flex;gap:.6rem;"><span style="color:#444;flex-shrink:0;">→</span>Upgraded e-commerce platforms using PHP MVC and MySQL.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──── 04 · PROJECTS ──── -->
+    <section id="projects" x-data="{f:'all'}">
+      <div class="bg-sec-num">04</div>
+      <div class="sr">
+        <div class="lbl-a" style="margin-bottom:.5rem;"><span class="acl"></span>Selected Work</div>
+        <h2 class="fd" style="font-size:clamp(2.6rem,5vw,4.8rem);line-height:1;margin-bottom:1rem;">
+          PROJECT <span style="-webkit-text-stroke:1px rgba(255,255,255,.14);color:transparent;">ARCHIVE</span>
+        </h2>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:.42rem;margin-bottom:1.8rem;" class="sr">
+        <button class="pill" :class="f==='all'?'on':''" @click="f='all'">All</button>
+        <button class="pill" :class="f==='ent'?'on':''" @click="f='ent'">Enterprise</button>
+        <button class="pill" :class="f==='cli'?'on':''" @click="f='cli'">Client</button>
+        <button class="pill" :class="f==='mob'?'on':''" @click="f='mob'">Mobile</button>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1px;border:1px solid var(--bd);" class="sr">
+
+        <!-- ConvoGene -->
+        <div x-show="f==='all'||f==='ent'" x-transition class="prow" style="padding:1.6rem 2rem;border:none;border-bottom:1px solid var(--bd);">
+          <div class="prow-num">01</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;">
+            <div>
+              <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;flex-wrap:wrap;">
+                <span class="fd acc" style="font-size:1.35rem;">CONVOGENE</span>
+                <span class="pill on" style="font-size:.54rem;padding:2px 9px;">AI Platform</span>
+              </div>
+              <p style="font-size:.74rem;color:#555;line-height:1.75;max-width:480px;">High-performance AI orchestration dashboard with real-time token analytics, multi-tenant agent builder, and streaming visualization. Reduced UI lag by <span class="acc" style="font-weight:600;">40%</span>.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.7rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">React</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Python FastAPI</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">WebSocket</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="stat-n" style="font-size:2rem;">40<em>%</em></div>
+              <div class="lbl" style="margin-top:2px;font-size:.56rem;">UI lag reduction</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NextZEN ERP -->
+        <div x-show="f==='all'||f==='ent'" x-transition class="prow" style="padding:1.6rem 2rem;border:none;border-bottom:1px solid var(--bd);">
+          <div class="prow-num">02</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;">
+            <div>
+              <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;flex-wrap:wrap;">
+                <span class="fd" style="font-size:1.35rem;color:#bfa8ff;">NEXTZEN ERP</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 9px;border-color:rgba(191,168,255,.25);color:#bfa8ff;">Enterprise</span>
+              </div>
+              <p style="font-size:.74rem;color:#555;line-height:1.75;max-width:480px;">MEAN stack ERP for 10K+ users with modular HR, finance, and inventory. Achieved <span style="color:#bfa8ff;font-weight:600;">25%</span> operational efficiency gains.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.7rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Angular</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Node.js</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">MongoDB</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">AWS</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="stat-n" style="font-size:2rem;color:#bfa8ff;">10K<em>+</em></div>
+              <div class="lbl" style="margin-top:2px;font-size:.56rem;">Active users</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upturn Advisor -->
+        <div x-show="f==='all'||f==='cli'" x-transition class="prow" style="padding:1.6rem 2rem;border:none;border-bottom:1px solid var(--bd);">
+          <div class="prow-num">03</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;">
+            <div>
+              <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;flex-wrap:wrap;">
+                <span class="fd" style="font-size:1.35rem;color:#fbbf24;">UPTURN ADVISOR</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 9px;border-color:rgba(251,191,36,.25);color:#fbbf24;">FinTech</span>
+              </div>
+              <p style="font-size:.74rem;color:#555;line-height:1.75;max-width:480px;">AI-powered stock advisor with real-time market data and robo-portfolio management. <span style="color:#fbbf24;font-weight:600;">20% performance improvement</span>, 15% engagement boost.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.7rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Angular</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">RxJS</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">WebSocket</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="stat-n" style="font-size:2rem;color:#fbbf24;">20<em>%</em></div>
+              <div class="lbl" style="margin-top:2px;font-size:.56rem;">Perf. gain</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SpeechAid -->
+        <div x-show="f==='all'||f==='mob'" x-transition class="prow" style="padding:1.6rem 2rem;border:none;border-bottom:1px solid var(--bd);">
+          <div class="prow-num">04</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;">
+            <div>
+              <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;flex-wrap:wrap;">
+                <span class="fd" style="font-size:1.35rem;color:#22d3ee;">SPEECHAID</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 9px;border-color:rgba(34,211,238,.25);color:#22d3ee;">Mobile App</span>
+              </div>
+              <p style="font-size:.74rem;color:#555;line-height:1.75;max-width:480px;">Cross-platform speech assistant with <span style="color:#22d3ee;font-weight:600;">500ms end-to-end audio</span> and 30% smaller footprint than native alternatives.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.7rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">React Native</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Redux</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">WebRTC</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="stat-n" style="font-size:2rem;color:#22d3ee;">500<em style="font-size:1.1rem;">ms</em></div>
+              <div class="lbl" style="margin-top:2px;font-size:.56rem;">Audio latency</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAHS -->
+        <div x-show="f==='all'||f==='ent'" x-transition class="prow" style="padding:1.6rem 2rem;border:none;">
+          <div class="prow-num">05</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start;">
+            <div>
+              <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;flex-wrap:wrap;">
+                <span class="fd" style="font-size:1.35rem;color:#4ade80;">DAHS PLATFORM</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 9px;border-color:rgba(74,222,128,.25);color:#4ade80;">Industrial IoT</span>
+              </div>
+              <p style="font-size:.74rem;color:#555;line-height:1.75;max-width:480px;">Industrial data acquisition system for Rockwell Automation — real-time monitoring and compliance reporting at enterprise scale for 50K+ users.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.7rem;">
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">Angular</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">React</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">FastAPI</span>
+                <span class="pill" style="font-size:.54rem;padding:2px 8px;">MongoDB</span>
+              </div>
+            </div>
+            <div style="text-align:right;flex-shrink:0;">
+              <div class="stat-n" style="font-size:2rem;color:#4ade80;">50K<em>+</em></div>
+              <div class="lbl" style="margin-top:2px;font-size:.56rem;">Users served</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ──── 05 · WHY ME ──── -->
+    <section id="strengths">
+      <div class="bg-sec-num">05</div>
+      <div class="sr">
+        <div class="lbl-a" style="margin-bottom:.5rem;"><span class="acl"></span>Differentiators</div>
+        <h2 class="fd" style="font-size:clamp(2.6rem,5vw,4.8rem);line-height:1;margin-bottom:2.5rem;">
+          WHY HIRE<br><span style="-webkit-text-stroke:1px var(--acc);color:transparent;">MUZMIL</span>
+        </h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.06);" class="sr">
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-solid fa-layer-group"></i></div><h3>Full Stack Mastery</h3><p>Angular and React expert. Deep Node.js and AWS fluency — owns the entire stack from UI component to cloud deployment pipeline.</p></div>
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-solid fa-bolt"></i></div><h3>Performance Focus</h3><p>Delivers 20–40% performance improvements consistently via code-splitting, lazy loading, API optimization, and Redis caching strategies.</p></div>
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-solid fa-users"></i></div><h3>Team Leadership</h3><p>Founded MITS Web Club. Trained 300+ developers. Elevates entire teams to adopt best practices in Angular, React, and TypeScript.</p></div>
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-brands fa-docker"></i></div><h3>Cloud Native</h3><p>Expert in Docker, CI/CD, AWS and IBM Cloud — automates everything from build to production deployment with zero downtime.</p></div>
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-solid fa-chart-line"></i></div><h3>Data Driven</h3><p>Grafana and Prometheus for real-time observability. Transforms raw metrics into actionable business intelligence dashboards.</p></div>
+        <div class="strc" style="background:#000;"><div class="strc-ic"><i class="fa-solid fa-brain"></i></div><h3>Fast Learner</h3><p>Mastered Angular 8–18, React hooks to Server Components, AI tooling. Stays ahead of rapidly evolving technology landscapes.</p></div>
+      </div>
+    </section>
+
+    <!-- ──── 06 · CONTACT ──── -->
+    <section id="contact" style="min-height:auto;padding-bottom:8rem;">
+      <div class="bg-sec-num">06</div>
+      <div class="sr">
+        <div class="lbl-a" style="margin-bottom:.5rem;"><span class="acl"></span>Let's Work Together</div>
+        <h2 class="fd" style="font-size:clamp(2.6rem,5vw,4.8rem);line-height:1;margin-bottom:.8rem;">
+          GET IN<br>
+          <span class="fs" style="font-style:italic;font-size:.7em;-webkit-text-stroke:1px rgba(255,255,255,.12);color:transparent;">touch</span>
+        </h2>
+        <p style="font-size:.8rem;color:#444;max-width:400px;line-height:1.85;margin-bottom:2.5rem;">
+          Open for senior full stack roles, consulting, and technical leadership — Bengaluru, Dubai, and remote-first opportunities worldwide.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;" class="sr">
+        <form style="display:flex;flex-direction:column;gap:1.6rem;" aria-label="Contact form">
+          <div><div class="lbl" style="margin-bottom:.4rem;">Your Name</div><input type="text" class="fld" placeholder="Full name" autocomplete="name"/></div>
+          <div><div class="lbl" style="margin-bottom:.4rem;">Email Address</div><input type="email" class="fld" placeholder="you@company.com" autocomplete="email"/></div>
+          <div><div class="lbl" style="margin-bottom:.4rem;">Subject</div><input type="text" class="fld" placeholder="Role, project, or collaboration"/></div>
+          <div><div class="lbl" style="margin-bottom:.4rem;">Message</div><textarea class="fld" rows="4" placeholder="What are you building?"></textarea></div>
+          <div><button type="submit" class="btn-p">Send Message <i class="fa-solid fa-arrow-right text-xs"></i></button></div>
+        </form>
+
+        <div style="display:flex;flex-direction:column;gap:1.6rem;">
+          <div>
+            <div class="lbl" style="margin-bottom:.7rem;">Direct Contact</div>
+            <a href="mailto:mohammadmuzmil.shaik@gmail.com"
+               style="display:block;font-family:'IBM Plex Mono',monospace;font-size:.67rem;color:#555;text-decoration:none;margin-bottom:.6rem;transition:color .2s;"
+               onmouseover="this.style.color='var(--acc)'" onmouseout="this.style.color='#555'">
+              mohammadmuzmil.shaik@gmail.com
+            </a>
+            <a href="tel:+918317513201"
+               style="display:block;font-family:'IBM Plex Mono',monospace;font-size:.67rem;color:#555;text-decoration:none;transition:color .2s;"
+               onmouseover="this.style.color='var(--acc)'" onmouseout="this.style.color='#555'">
+              +91‑8317513201
+            </a>
+          </div>
+
+          <div style="height:1px;background:rgba(255,255,255,.07);"></div>
+
+          <div>
+            <div class="lbl" style="margin-bottom:.7rem;">Profiles</div>
+            <a href="https://www.linkedin.com/in/shaik-mohammad-muzmil-51b0a3161" target="_blank"
+               class="btn-o" style="display:flex;margin-bottom:.5rem;justify-content:center;">
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/mohammad-muzmil" target="_blank"
+               class="btn-o" style="display:flex;justify-content:center;">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+
+          <div style="height:1px;background:rgba(255,255,255,.07);"></div>
+
+          <div>
+            <div class="lbl" style="margin-bottom:.5rem;">Location</div>
+            <div class="fm" style="font-size:.65rem;color:#333;line-height:2.2;">
+              Bengaluru, India<br>
+              <span class="acc">→</span> Open to Dubai<br>
+              <span class="acc">→</span> Open to Remote
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="border-top:1px solid rgba(255,255,255,.07);padding:1.6rem 4rem 1.6rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div class="fd acc" style="font-size:1.2rem;letter-spacing:.07em;">MUZMIL<span style="color:#fff">.</span></div>
+      <div class="fm" style="font-size:.56rem;color:#222;letter-spacing:.1em;">
+        © <span x-text="new Date().getFullYear()"></span> SHAIK MOHAMMAD MUZMIL — ALL RIGHTS RESERVED
+      </div>
+      <div style="display:flex;align-items:center;gap:.5rem;">
+        <span style="width:5px;height:5px;background:var(--acc);border-radius:50%;animation:blink 1.8s infinite;"></span>
+        <span class="lbl-a" style="font-size:.56rem;">Open to senior roles globally</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Cursor
+    const cr=document.getElementById('cr'),cd=document.getElementById('cd');
+    document.addEventListener('mousemove',e=>{
+      cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px';
+      cd.style.left=e.clientX+'px';cd.style.top=e.clientY+'px';
+    });
+    document.querySelectorAll('a,button,.prow').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{cr.style.width='50px';cr.style.height='50px';cr.style.background='rgba(200,255,0,.07)';});
+      el.addEventListener('mouseleave',()=>{cr.style.width='32px';cr.style.height='32px';cr.style.background='transparent';});
+    });
+
+    function app(){return{};}
+
+    // Scroll spy
+    function sSpy(){
+      return{
+        a:'hero',
+        ids:['hero','skills','experience','projects','strengths','contact'],
+        init(){window.addEventListener('scroll',()=>this.upd(),{passive:true});this.upd();},
+        upd(){
+          for(let i=this.ids.length-1;i>=0;i--){
+            const el=document.getElementById(this.ids[i]);
+            if(el&&el.getBoundingClientRect().top<=110){this.a=this.ids[i];return;}
+          }
+          this.a='hero';
+        },
+        go(id){const el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop,behavior:'smooth'});}
+      };
+    }
+
+    // Skills app
+    function skApp(){
+      return{
+        ld:false,
+        sk:[
+          {n:'Angular 14–18',p:95},{n:'React / Next.js',p:92},{n:'Node.js/Express',p:90},
+          {n:'TypeScript',p:93},{n:'React Native',p:88},{n:'AWS Cloud',p:82},
+          {n:'MongoDB/Redis',p:85},{n:'Docker/CI-CD',p:80},{n:'Python/FastAPI',p:75},
+        ],
+        init(){
+          const obs=new IntersectionObserver(e=>{
+            if(e[0].isIntersecting){this.ld=true;obs.disconnect();}
+          },{threshold:.2});
+          obs.observe(this.$refs.sw);
+        }
+      };
+    }
+
+    // Scroll reveal
+    document.addEventListener('DOMContentLoaded',()=>{
+      const obs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+      },{threshold:.06});
+      document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+
+      // Mobile nav highlight
+      const mls=document.querySelectorAll('.mla');
+      const secs=document.querySelectorAll('section[id]');
+      window.addEventListener('scroll',()=>{
+        let cur='';
+        secs.forEach(s=>{if(s.offsetTop<=window.scrollY+220)cur=s.id;});
+        mls.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+cur));
+      },{passive:true});
+    });
+  </script>
+</body>
+</html>
