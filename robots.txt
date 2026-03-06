@@ -1,0 +1,9 @@
+# robots.txt — Shaik Mohammad Muzmil Portfolio
+# https://shaik-mohammad-muzmil.web.app/
+
+# Allow all crawlers (including Googlebot) to index the entire site
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://shaik-mohammad-muzmil.web.app/sitemap.xml
