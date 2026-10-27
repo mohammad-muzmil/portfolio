@@ -37,11 +37,11 @@ function Outro() {
       target="_blank"
       rel="noreferrer"
       data-cursor="link"
-      className="group flex aspect-[3/4] w-[70vw] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-white/15 text-center transition hover:border-crimson-2/60 sm:w-[44vw] lg:aspect-auto lg:h-[66vh] lg:w-[24vw]"
+      className="group flex min-h-[500px] w-[75vw] max-w-[300px] shrink-0 snap-start flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-white/15 text-center transition hover:border-crimson-2/60 sm:min-h-0 sm:w-[44vw] sm:max-w-none sm:aspect-[16/12] lg:aspect-auto lg:h-[66vh] lg:w-[24vw]"
     >
       <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 text-2xl text-bone transition group-hover:scale-110 group-hover:border-crimson-2 group-hover:text-crimson-2">↗</span>
       <span className="font-display text-3xl tracking-wide text-bone">More on GitHub</span>
-      <span className="text-xs text-mist">github.com/Sushmitadasari</span>
+      <span className="text-xs text-mist">{profile.links.github.replace('https://', '')}</span>
     </a>
   );
 }
